@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AgentController extends Controller
 {
     public function agent(){
-        return view('agent.agent_dasboard');
+        return view('agent.agent_dashboard');
         }
 }
