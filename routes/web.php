@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +32,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin.dashboard');
+Route::get('/agent/dashboard', [AgentController::class, 'agent'])->name('agent.dashboard');
+Route::get('/user/dashboard', [UserController::class, 'user'])->name('user.dashboard');
+
