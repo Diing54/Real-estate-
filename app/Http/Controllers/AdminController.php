@@ -11,6 +11,10 @@ class AdminController extends Controller
     return view('admin.index');
     }
 
+    public function login(){
+        return view('admin.admin_login');
+        }
+
     /**
      * Destroy an authenticated session.
      */
