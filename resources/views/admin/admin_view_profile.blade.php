@@ -17,7 +17,7 @@
           </div>
    
         </div>
-        <p>Hi! I'm {{ $profileData->name}} the Senior UI Designer at Real Estate. We hope you enjoy the design and quality of Social.</p>
+         
         <div class="mt-3">
           <label class="tx-11 fw-bolder mb-0 text-uppercase">Name:</label>
           <p class="text-muted">{{ $profileData->name}}</p>
