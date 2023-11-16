@@ -30,6 +30,32 @@ class AdminController extends Controller
 
     }
 
+    public function updateProfile(Request $request){
+
+        $id = Auth::user()->id;
+
+        $data = User::find($id);
+
+        $data->username = $request->username;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->address = $request->address;
+        $data->phone = $request->phone;
+
+        if($request->file('photo')){
+            $file = $request->file('photo');
+            $filename = date('YmdHi').$file -> getClientOriginalName();
+            $file->move(public_path('upload/admin_images'),$filename);
+            $data['photo'] = $filename;
+        }
+
+        $data->save();
+
+        return redirect()->back();
+
+    }
+
+
     /**
      * Destroy an authenticated session.
      */
