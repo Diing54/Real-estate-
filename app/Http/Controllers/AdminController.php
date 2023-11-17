@@ -33,7 +33,6 @@ class AdminController extends Controller
     public function updateProfile(Request $request){
 
         $id = Auth::user()->id;
-
         $data = User::find($id);
 
         $data->username = $request->username;
@@ -58,6 +57,15 @@ class AdminController extends Controller
 
         return redirect()->back()->with($notification);
 
+    }
+
+    public function changePassword(){
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+         return view('admin.admin_change_password',compact('profileData'));
+    }
+
+    public function updatePassword(Request $request){
     }
 
 
