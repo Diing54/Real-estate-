@@ -58,7 +58,7 @@
 
 								<h6 class="card-title">Admin Change Password</h6>
 
-								<form class="forms-sample" method="post" action="{{route('admin.password.update')}}" enctype="multipart/form-data">
+								<form class="forms-sample" method="post" action="{{route('admin.password.update')}}">
                                     @csrf
 
 									<div class="mb-3">
