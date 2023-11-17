@@ -62,8 +62,29 @@
                                     @csrf
 
 									<div class="mb-3">
-										<label for="username" class="form-label">Username</label>
-										<input type="text" class="form-control" name="username" id="username" value="{{$profileData->username}}" autocomplete="off">
+										<label for="old_password" class="form-label">Old Password</label>
+										<input type="password" class="form-control @error('old_password') is-invalid @enderror" name="old_password" id="old_password" autocomplete="off">
+
+                                        @error('old_password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+
+									</div>
+
+                                    <div class="mb-3">
+										<label for="new_password" class="form-label">New Password</label>
+										<input type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password" id="new_password" autocomplete="off">
+
+                                        @error('new_password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+
+									</div>
+                                    
+                                    
+                                    <div class="mb-3">
+										<label for="new_password_confirmation" class="form-label">Confirm New Password</label>
+										<input type="password" class="form-control" name="new_password_confirmation" id="new_password_confirmation" autocomplete="off">
 									</div>
   
 									<button type="submit" class="btn btn-primary me-2">Save Changes</button>
