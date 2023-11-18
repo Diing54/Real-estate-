@@ -15,8 +15,9 @@
 
 								<h6 class="card-title">Edit Property Type</h6>
 
-								<form class="forms-sample" method="post" action="{{route('store.type')}}">
+								<form class="forms-sample" method="post" action="{{route('update.type')}}">
                                     @csrf
+                                    <input type="hidden" name="id" value="{{$types->id}}">
 
 									<div class="mb-3">
 										<label for="type_name" class="form-label">Type Name</label>

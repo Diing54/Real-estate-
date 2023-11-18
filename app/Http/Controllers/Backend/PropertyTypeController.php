@@ -61,9 +61,22 @@ class PropertyTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function updateType(Request $request)
     {
-        //
+
+        $pid = $request -> id;
+        
+        PropertyType::findOrFail($pid)->update([
+            'type_name' => $request -> type_name,
+            'type_icon' => $request -> type_icon
+        ]);
+
+       
+            $notification = array(
+                'message' => 'Property Type Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.type')->with($notification);
     }
 
     /**
