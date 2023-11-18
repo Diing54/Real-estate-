@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 });
 
+//End Admin middleware
+
 //Agent middleware
 
 Route::middleware(['auth','role:agent'])->group(function(){
@@ -55,6 +58,8 @@ Route::middleware(['auth','role:agent'])->group(function(){
 Route::get('/agent/dashboard', [AgentController::class, 'agent'])->name('agent.dashboard');
 
 });
+
+//End Agent middleware
 
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 
@@ -81,6 +86,18 @@ Route::controller(PropertyTypeController::class)->group(function(){
     Route::get('/admin/amenity/all-amenity/edit-amenity/{id}','editAmenity')->name('edit.amenity');
     Route::post('/admin/amenity/all-amenity/update-amenity','updateAmenity')->name('update.amenity');
     Route::get('/admin/amenity/all-amenity/delete-amenity/{id}','deleteAmenity')->name('delete.amenity');
+    
+});
+
+//Amenities all routes
+Route::controller(RoleController::class)->group(function(){
+
+    Route::get('/admin/roles-and-permissions/all-permission','allPermission')->name('all.permissions');
+    Route::get('/admin/roles-and-permissions/all-permission/add-permission','addPermission')->name('add.permission');
+    Route::post('/admin/roles-and-permissions/all-permission/store-permission','storePermission')->name('store.permission');
+    Route::get('/admin/roles-and-permissions/all-permission/edit-permission/{id}','editPermission')->name('edit.permission');
+    Route::post(' /admin/roles-and-permissions/all-permission/update-permission','updatePermission')->name('update.permission');
+    Route::get('/admin/roles-and-permissions/all-permission/delete-permission/{id}','deletePermission')->name('delete.permission');
     
 });
 });
