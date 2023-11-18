@@ -15,7 +15,7 @@
 
 								<h6 class="card-title">Add New Property Type</h6>
 
-								<form class="forms-sample" method="post" action="{{route('admin.password.update')}}">
+								<form class="forms-sample" method="post" action="{{route('store.type')}}">
                                     @csrf
 
 									<div class="mb-3">
