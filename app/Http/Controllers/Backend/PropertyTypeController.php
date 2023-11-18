@@ -18,11 +18,11 @@ class PropertyTypeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new property type.
      */
-    public function create()
+    public function addType()
     {
-        //
+        return view('backend.type.add_type');
     }
 
     /**
