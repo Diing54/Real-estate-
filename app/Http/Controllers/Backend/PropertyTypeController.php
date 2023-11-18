@@ -82,8 +82,14 @@ class PropertyTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function deleteType($id)
     {
-        //
+        PropertyType::findOrFail($id) -> delete();
+
+        $notification = array(
+            'message' => 'Property Type Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }
