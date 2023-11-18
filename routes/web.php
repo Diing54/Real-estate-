@@ -66,6 +66,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/admin/property-type/all-type','allType')->name('all.type');
         Route::get('/admin/property-type/all-type/add-type','addType')->name('add.type');
         Route::post('/admin/property-type/all-type/store-type','storeType')->name('store.type');
+        Route::get('/admin/property-type/all-type/edit-type/{id}','editType')->name('edit.type');
+
         
 });
 });

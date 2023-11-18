@@ -47,21 +47,15 @@ class PropertyTypeController extends Controller
             );
             return redirect()->route('all.type')->with($notification);
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
+ 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function editType($id)
     {
-        //
+        $types = PropertyType::findOrFail($id);
+
+        return view('backend.type.edit_type', compact('types'));
     }
 
     /**
