@@ -103,4 +103,74 @@ class PropertyTypeController extends Controller
         return view('backend.amenity.all_amenity',compact('amenity'));
     }
 
+    public function addAmenity()
+    {
+        return view('backend.amenity.add_amenity');
+    }
+
+        /**
+     * Store a newly created property type in storage.
+     */
+    public function storeAmenity(Request $request)
+    {
+          $request->validate([
+            'amenity_name' => 'required|unique:amenities|max:200',
+         ]);
+
+        Amenities::insert([
+            'amenity_name' => $request -> amenity_name,
+         ]);
+
+       
+            $notification = array(
+                'message' => 'Amenity Added Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.amenities')->with($notification);
+    }
+ 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function editAmenity($id)
+    {
+        $amenities = Amenities::findOrFail($id);
+
+        return view('backend.amenity.edit_amenity', compact('amenities'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function updateAmenity(Request $request)
+    {
+
+        $aid = $request -> id;
+        
+        Amenities::findOrFail($aid)->update([
+            'amenity_name' => $request -> amenity_name,
+         ]);
+
+       
+            $notification = array(
+                'message' => 'Amenity Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.amenities')->with($notification);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function deleteAmenity($id)
+    {
+        Amenities::findOrFail($id) -> delete();
+
+        $notification = array(
+            'message' => 'Amenity Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
 }

@@ -76,11 +76,11 @@ Route::middleware(['auth','role:admin'])->group(function(){
 Route::controller(PropertyTypeController::class)->group(function(){
 
     Route::get('/admin/amenity/all-amenity','allAmenity')->name('all.amenities');
-    // Route::get('/admin/amenity/all-amenity/add-amenity','addAmenity')->name('add.amenity');
-    // Route::post('/admin/amenity/all-amenity/store-amenity','storeAmenity')->name('store.amenity');
-    // Route::get('/admin/amenity/all-amenity/edit-amenity/{id}','editAmenity')->name('edit.amenity');
-    // Route::post('/admin/amenity/all-amenity/update-amenity','updateAmenity')->name('update.type');
-    // Route::get('/admin/amenity/all-amenity/delete-amenity/{id}','deleteAmenity')->name('delete.amenity');
+    Route::get('/admin/amenity/all-amenity/add-amenity','addAmenity')->name('add.amenity');
+    Route::post('/admin/amenity/all-amenity/store-amenity','storeAmenity')->name('store.amenity');
+    Route::get('/admin/amenity/all-amenity/edit-amenity/{id}','editAmenity')->name('edit.amenity');
+    Route::post('/admin/amenity/all-amenity/update-amenity','updateAmenity')->name('update.amenity');
+    Route::get('/admin/amenity/all-amenity/delete-amenity/{id}','deleteAmenity')->name('delete.amenity');
     
 });
 });
