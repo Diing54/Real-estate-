@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Amenities;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 
@@ -92,4 +93,14 @@ class PropertyTypeController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+
+    //////////////////////////////////Amenities//////////////////////////////////////////////////
+
+    public function allAmenity()
+    {
+        $amenity = Amenities::latest()->get();
+        return view('backend.amenity.all_amenity',compact('amenity'));
+    }
+
 }
