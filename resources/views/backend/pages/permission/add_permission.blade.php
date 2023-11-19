@@ -17,11 +17,30 @@
 
 								<form id="myForm" class="forms-sample" method="post" action="{{route('store.permission')}}">
                                     @csrf
-
 									<div class="form-group mb-3">
 										<label for="permission_name" class="form-label">Permission Name</label>
-										<input type="text" class="form-control" name="permission_name">
+										<input type="text" class="form-control" name="name">
 									</div>
+                                    <div class="form-group mb-3">
+										<label for="permission_name" class="form-label">Group Name</label>
+                                        <select name="group_name" class="form-select" id="exampleFormControlSelect1">
+                                            <option selected="" disabled="">Select Group</option>
+                                            <option value="type">Propety Type</option>
+                                            <option value="state">State</option>
+                                            <option value="amenities">Amenities</option>
+                                            <option value="property">Propety</option>
+                                            <option value="history">Package History</option>
+                                            <option value="message">Propety Message</option>
+                                            <option value="testimonials">Testimonials</option>
+                                            <option value="agent">Manage Agent</option>
+                                            <option value="category">Blog Category</option>
+                                            <option value="post">Blog Post</option>
+                                            <option value="comment">Blog Comment</option>
+                                            <option value="stmp">STMP Setting</option>
+                                            <option value="site">Site Setting</option>
+                                            <option value="role">Role & Permission</option>
+                                        </select>
+ 									</div>
  
 									<button type="submit" class="btn btn-primary me-2">Save Changes</button>
  								</form>

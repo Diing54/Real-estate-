@@ -31,7 +31,17 @@ class RoleController extends Controller
      */
     public function storePermission(Request $request)
     {
-        //
+        $permission = Permission::create([
+            'name' => $request->name,
+            'group_name' => $request->group_name,
+
+        ]); 
+
+        $notification = array(
+            'message' => 'Permission Created Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.permissions')->with($notification);
     }
 
     /**
@@ -45,9 +55,10 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editPermission(string $id)
+    public function editPermission($id)
     {
-        //
+        $permission = Permission::findOrFail($id);
+        return view('backend.pages.permission.edit_permission',compact('permission'));
     }
 
     /**
@@ -55,7 +66,19 @@ class RoleController extends Controller
      */
     public function updatePermission(Request $request, string $id)
     {
-        //
+        $pid = $request -> id;
+        
+        Permission::findOrFail($pid)->update([
+            'name' => $request -> name,
+            'group_name' => $request -> group_name
+         ]);
+
+       
+            $notification = array(
+                'message' => 'Permission Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.permissions')->with($notification);
     }
 
     /**
@@ -63,6 +86,12 @@ class RoleController extends Controller
      */
     public function deletePermission(string $id)
     {
-        //
+        Permission::findOrFail($id) -> delete();
+
+        $notification = array(
+            'message' => 'Permission Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }
