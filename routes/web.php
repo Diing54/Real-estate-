@@ -114,7 +114,8 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/admin/roles-and-permissions/all-role/edit-role/{id}','editRole')->name('edit.role');
     Route::post('/admin/roles-and-permissions/all-role/update-role','updateRole')->name('update.role');
     Route::get('/admin/roles-and-permissions/all-role/delete-role/{id}','deleteRole')->name('delete.role');
- 
+
+    Route::get('/admin/roles-and-permissions/add-roles-permission','addRolesPermission')->name('add.roles.permission'); 
 });
 });
 

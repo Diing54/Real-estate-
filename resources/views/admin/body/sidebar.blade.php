@@ -31,7 +31,7 @@
                             <a href="{{route('all.type')}}" class="nav-link">All Type</a>
                             </li>
                             <li class="nav-item">
-                            <a href="pages/email/read.html" class="nav-link">Add Type</a>
+                            <a href="{{route('add.type')}}" class="nav-link">Add Type</a>
                             </li>
                         </ul>
                         </div>
@@ -97,6 +97,9 @@
                             </li>
                             <li class="nav-item">
                             <a href="{{route('all.roles')}}" class="nav-link">Roles</a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="{{route('add.roles.permission')}}" class="nav-link">Role in Permission</a>
                             </li>
                              
                         </ul>
