@@ -3,6 +3,13 @@
 @section('admin')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+    .form-check{
+        text-transform: capitalize;
+    }
+</style>
+
 <div class="page-content">
 
  
