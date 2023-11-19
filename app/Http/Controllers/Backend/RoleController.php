@@ -7,6 +7,7 @@ use App\Exports\PermissionExport;
 use Spatie\Permission\Models\Role;
  use App\Imports\PermissionImport;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
 
@@ -191,6 +192,9 @@ class RoleController extends Controller
     {
         $roles = Role::all();
         $permissions = Permission::all();
-        return view('backend.pages.rolesetup.add_roles_permission',compact('roles','permissions'));
+        $permission_groups = User::addRolesPermission();
+        return view('backend.pages.rolesetup.add_roles_permission',compact('roles','permissions','permission_groups'));
     } 
+
+
 }
