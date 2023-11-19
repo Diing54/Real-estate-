@@ -26,6 +26,12 @@
                                             @endforeach
                                         </select>									
                                     </div>
+                                    <div class="form-check mb-2">
+                                            <input type="checkbox" class="form-check-input" id="checkDefault">
+											<label class="form-check-label" for="checkDefault">
+												All Permissions
+											</label>
+									</div>
 									<button type="submit" class="btn btn-primary me-2">Save Changes</button>
  								</form>
 
