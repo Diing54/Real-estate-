@@ -64,7 +64,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updatePermission(Request $request, string $id)
+    public function updatePermission(Request $request)
     {
         $pid = $request -> id;
         

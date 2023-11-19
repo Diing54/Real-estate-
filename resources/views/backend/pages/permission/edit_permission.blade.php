@@ -1,6 +1,3 @@
-
-<input type="hidden" name="id" value="{{$permission->id}}">
-
 @extends('admin.admin_dashboard')
 
 @section('admin')
@@ -16,27 +13,35 @@
     <div class="card">
               <div class="card-body">
 
-								<h6 class="card-title">Edit Permission</h6>
+								<h6 class="card-title">Add New Permission</h6>
 
-								<form class="forms-sample" method="post" action="{{route('update.permission')}}">
+								<form id="myForm" class="forms-sample" method="post" action="{{route('update.permission')}}">
+                                <input type="hidden" name="id" value="{{$permission->id}}">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{$permission->id}}">
-
-									<div class="mb-3">
+									<div class="form-group mb-3">
 										<label for="permission_name" class="form-label">Permission Name</label>
-										<input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$permission->name}}">
-                                        @error('name')
-                                        <span class="text-danger">{{$message}}</span>
-                                        @enderror
+										<input type="text" class="form-control" name="name" value="{{$permission->name}}">
 									</div>
-
-									<div class="mb-3">
-										<label for="group_name" class="form-label">Group Name</label>
-										<input type="text" class="form-control @error('group_name') is-invalid @enderror" name="group_name" value="{{$permission->group_name}}">
-                                        @error('group_name')
-                                        <span class="text-danger">{{$message}}</span>
-                                        @enderror
-									</div>
+                                    <div class="form-group mb-3">
+										<label for="permission_name" class="form-label">Group Name</label>
+                                        <select name="group_name" class="form-select" id="exampleFormControlSelect1">
+                                            <option selected="" disabled="">Select Group</option>
+                                            <option value="type" {{$permission->group_name == 'type' ? 'selected' : ''}}>Propety Type</option>
+                                            <option value="state" {{$permission->group_name == 'state' ? 'selected' : ''}}>State</option>
+                                            <option value="amenities" {{$permission->group_name == 'amenities' ? 'selected' : ''}}>Amenities</option>
+                                            <option value="property" {{$permission->group_name == 'property' ? 'selected' : ''}}>Propety</option>
+                                            <option value="history" {{$permission->group_name == 'history' ? 'selected' : ''}}>Package History</option>
+                                            <option value="message" {{$permission->group_name == 'message' ? 'selected' : ''}}>Propety Message</option>
+                                            <option value="testimonials" {{$permission->group_name == 'testmonials' ? 'selected' : ''}}>Testimonials</option>
+                                            <option value="agent" {{$permission->group_name == 'agent' ? 'selected' : ''}}>Manage Agent</option>
+                                            <option value="category" {{$permission->group_name == 'category' ? 'selected' : ''}}>Blog Category</option>
+                                            <option value="post" {{$permission->group_name == 'post' ? 'selected' : ''}}>Blog Post</option>
+                                            <option value="comment" {{$permission->group_name == 'comment' ? 'selected' : ''}}>Blog Comment</option>
+                                            <option value="stmp" {{$permission->group_name == 'stmp' ? 'selected' : ''}}>STMP Setting</option>
+                                            <option value="site" {{$permission->group_name == 'site' ? 'selected' : ''}}>Site Setting</option>
+                                            <option value="role" {{$permission->group_name == 'role' ? 'selected' : ''}}>Role & Permission</option>
+                                        </select>
+ 									</div>
  
 									<button type="submit" class="btn btn-primary me-2">Save Changes</button>
  								</form>
@@ -51,6 +56,6 @@
   <!-- right wrapper end -->
 </div>
 
-    </div>
- 
+</div>
+  
 @endsection
