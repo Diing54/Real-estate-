@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Exports\PermissionExport;
+use Spatie\Permission\Models\Role;
+ use App\Imports\PermissionImport;
 use App\Http\Controllers\Controller;
-use App\Imports\PermissionImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
+
+        ////////////////////////////Permission All Method///////////////////////////////////////
+
     /**
      * Display a listing of the resource.
      */
@@ -98,13 +102,15 @@ class RoleController extends Controller
         return redirect()->back()->with($notification);
     }
 
-
+////////////////////////////Export & Import Permissions/////////////////////////////////
+//Export
     public function export()
     {
         return Excel::download(new PermissionExport, 'permission.xlsx');
     }
+//End Export
 
-
+//Import
     public function import(Request $request)
     {
         Excel::import(new PermissionImport, $request->file('import_file'));
@@ -114,5 +120,68 @@ class RoleController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('all.permissions')->with($notification);
+    }
+//End Import
+
+
+
+    ////////////////////////////Role All Method///////////////////////////////////////
+
+    public function allrole()
+    {
+        $roles = Role::all();
+        return view('backend.pages.role.all_role',compact('roles'));
+    }
+
+    public function addRole()
+    {
+        return view('backend.pages.role.add_role');
+    }
+
+    public function storeRole(Request $request)
+    {
+        $role = Role::create([
+            'name' => $request->name,
+        ]); 
+
+        $notification = array(
+            'message' => 'Role Created Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.roles')->with($notification);
+    }
+
+    public function editRole($id)
+    {
+        $role = Role::findOrFail($id);
+        return view('backend.pages.role.edit_role',compact('role'));
+    }
+
+    public function updateRole(Request $request)
+    {
+        $rid = $request -> id;
+        
+        Role::findOrFail($rid)->update([
+            'name' => $request -> name,
+          ]);
+
+       
+            $notification = array(
+                'message' => 'Role Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.roles')->with($notification);
+    }
+
+
+    public function deleteRole($id)
+    {
+        Role::findOrFail($id) -> delete();
+
+        $notification = array(
+            'message' => 'Role Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

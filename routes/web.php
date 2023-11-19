@@ -89,7 +89,7 @@ Route::controller(PropertyTypeController::class)->group(function(){
     
 });
 
-//Amenities all routes
+//Permissions all routes
 Route::controller(RoleController::class)->group(function(){
 
     Route::get('/admin/roles-and-permissions/all-permission','allPermission')->name('all.permissions');
@@ -103,6 +103,18 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/admin/roles-and-permissions/all-permission/export-permission','export')->name('export');
     Route::post('/admin/roles-and-permissions/all-permission/import-permission','import')->name('import');
     
+});
+
+//Roles all routes
+Route::controller(RoleController::class)->group(function(){
+
+    Route::get('/admin/roles-and-permissions/all-role','allrole')->name('all.roles');
+    Route::get('/admin/roles-and-permissions/all-role/add-role','addRole')->name('add.role');
+    Route::post('/admin/roles-and-permissions/all-role/store-role','storeRole')->name('store.role');
+    Route::get('/admin/roles-and-permissions/all-role/edit-role/{id}','editRole')->name('edit.role');
+    Route::post('/admin/roles-and-permissions/all-role/update-role','updateRole')->name('update.role');
+    Route::get('/admin/roles-and-permissions/all-role/delete-role/{id}','deleteRole')->name('delete.role');
+ 
 });
 });
 

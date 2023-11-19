@@ -96,7 +96,7 @@
                             <a href="{{route('all.permissions')}}" class="nav-link">Permissions</a>
                             </li>
                             <li class="nav-item">
-                            <a href="pages/advanced-ui/owl-carousel.html" class="nav-link">Owl carousel</a>
+                            <a href="{{route('all.roles')}}" class="nav-link">Roles</a>
                             </li>
                              
                         </ul>
