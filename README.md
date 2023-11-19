@@ -1,1 +1,0 @@
-![Alt text](<Screenshot from 2023-11-18 15-38-41.png>)

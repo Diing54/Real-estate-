@@ -20,7 +20,7 @@
 
 								<h6 class="card-title">Import Permission</h6>
 
-								<form id="myForm" class="forms-sample" method="post" action="{{route('store.permission')}}">
+								<form id="myForm" class="forms-sample" method="post" action="{{route('import')}}"  enctype="multipart/form-data" >
                                     @csrf
 									<div class="form-group mb-3">
 										<label for="permission_name" class="form-label">Xlsx File Import</label>
