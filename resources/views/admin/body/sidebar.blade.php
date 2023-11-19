@@ -91,6 +91,7 @@
                         </a>
                         <div class="collapse" id="advancedUI">
                         <ul class="nav sub-menu">
+                            
                             <li class="nav-item">
                             <a href="{{route('all.permissions')}}" class="nav-link">Permissions</a>
                             </li>

@@ -98,6 +98,8 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/admin/roles-and-permissions/all-permission/edit-permission/{id}','editPermission')->name('edit.permission');
     Route::post('/admin/roles-and-permissions/all-permission/update-permission','updatePermission')->name('update.permission');
     Route::get('/admin/roles-and-permissions/all-permission/delete-permission/{id}','deletePermission')->name('delete.permission');
+
+    Route::get('/admin/roles-and-permissions/all-permission/import-permission','importPermission')->name('import.permission');
     
 });
 });

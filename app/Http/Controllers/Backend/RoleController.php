@@ -45,11 +45,11 @@ class RoleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * import specified resource.
      */
-    public function show(string $id)
+    public function importPermission()
     {
-        //
+        return view('backend.pages.permission.import_permission');
     }
 
     /**
