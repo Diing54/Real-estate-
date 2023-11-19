@@ -27,7 +27,7 @@
                                             <option selected="" disabled="">Select Group</option>
                                             <option value="type">Propety Type</option>
                                             <option value="state">State</option>
-                                            <option value="amenities">Amenities</option>
+                                            <option value="amenity">Amenities</option>
                                             <option value="property">Propety</option>
                                             <option value="history">Package History</option>
                                             <option value="message">Propety Message</option>
