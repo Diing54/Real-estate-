@@ -5,6 +5,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <div class="page-content">
 
+                <nav class="page-breadcrumb">
+					<ol class="breadcrumb">
+                        <a href="{{route('add.permission')}}" class="btn btn-inverse-danger">Download Xlsx</a>
+					</ol>
+				</nav>
  
 <div class="row profile-body">
   <!-- middle wrapper start -->
@@ -22,7 +27,7 @@
 										<input type="file" class="form-control" name="import_file">
 									</div>
       
-									<button type="submit" class="btn btn-primary me-2">Upload</button>
+									<button type="submit" class="btn btn-inverse-warning">Upload</button>
  								</form>
 
               </div>
