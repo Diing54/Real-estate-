@@ -117,6 +117,7 @@ Route::controller(RoleController::class)->group(function(){
 
     Route::get('/admin/roles-and-permissions/add-roles-permission','addRolesPermission')->name('add.roles.permission'); 
     Route::post('/admin/roles-and-permissions/role-in-permission/store-role-permission','storeRolePermission')->name('store.role.permission');
+    Route::get('/admin/roles-and-permissions/all-roles-permission','allRolesPermission')->name('all.roles.permission'); 
 
 });
 });

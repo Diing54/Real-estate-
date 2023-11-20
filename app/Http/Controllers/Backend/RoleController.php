@@ -216,5 +216,11 @@ class RoleController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function allRolesPermission()
+    {
+        $roles = Role::all();
+        return view('backend.pages.rolesetup.all_roles_permission',compact('roles'));
+    }
+
 
 }
