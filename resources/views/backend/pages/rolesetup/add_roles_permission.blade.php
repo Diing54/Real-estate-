@@ -22,7 +22,7 @@
 
 								<h6 class="card-title">Roles Name</h6>
 
-								<form id="myForm" class="forms-sample" method="post" action="{{route('store.role')}}">
+								<form id="myForm" class="forms-sample" method="post" action="{{route('store.role.permission')}}">
                                     @csrf
 									<div class="form-group mb-3">
 										<label for="role_name" class="form-label">Role Name</label>
