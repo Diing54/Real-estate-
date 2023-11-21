@@ -52,9 +52,21 @@ class User extends Authenticatable
         return $permissions;
     }
 
-    public static function roleHasPermissions()
+    public static function roleHasPermissions($role, $permissions)
     {
-        
+        $hasPermissions = true;
+
+        foreach($permissions as $permission){
+
+            if(!$role -> hasPermissionTo($permission->name))
+            {
+                $hasPermissions = false;
+            }
+
+            return $hasPermissions;
+            
+
+        }
     }
 
 }

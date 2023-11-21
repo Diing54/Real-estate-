@@ -228,7 +228,7 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
         $permission_groups = User::addRolesPermission();
-        return view('backend.pages.rolesetup.edit_role_permission',compact('role','permissions','permission_groups'));
+        return view('backend.pages.rolesetup.edit_roles_permission',compact('role','permissions','permission_groups'));
 
     }
 

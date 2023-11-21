@@ -55,7 +55,7 @@
                                             
                                             @foreach($permissions as $permission)
                                         <div class="form-check mb-2">
-                                            <input type="checkbox" class="form-check-input" id="checkDefault{{$permission->id}}" name="permission[]" value="{{$permission->id}}">
+                                            <input type="checkbox" class="form-check-input" id="checkDefault{{$permission->id}}" name="permission[]" value="{{$permission->id}}" {{$role -> hasPermissionTo($permission->name) ? 'checked' : '' }}>
 											<label class="form-check-label" for="checkDefault{{$permission->id}}">
 												{{$permission -> name}}
 											</label>
