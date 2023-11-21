@@ -52,4 +52,9 @@ class User extends Authenticatable
         return $permissions;
     }
 
+    public static function roleHasPermissions()
+    {
+        
+    }
+
 }

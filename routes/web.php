@@ -119,6 +119,9 @@ Route::controller(RoleController::class)->group(function(){
     Route::post('/admin/roles-and-permissions/role-in-permission/store-role-permission','storeRolePermission')->name('store.role.permission');
     Route::get('/admin/roles-and-permissions/all-roles-permission','allRolesPermission')->name('all.roles.permission'); 
 
+    Route::get('/admin/roles-and-permissions/all-roles-permission/edit-role-permission/{id}','editRolePermission')->name('edit.role.permission'); 
+
+
 });
 });
 
