@@ -17,7 +17,7 @@
                 <h6 class="card-title">All Roles Permission</h6>
                  
                 <div class="table-responsive">
-                  <table id="dataTableExample" class="table">
+                  <table class="table">
                     <thead>
                       <tr>
                         <th>S1</th>
@@ -32,7 +32,7 @@
                         <td>{{$key+1}}</td>
                         <td>{{$item->name}}</td>
                         <td>
-                            @foreach($item -> $permissions as $prem)
+                            @foreach($item -> permissions as $prem)
                             <span class="badge bg-danger">{{$prem->name}}</span>
                             @endforeach
                         </td>
