@@ -129,7 +129,7 @@ Route::controller(RoleController::class)->group(function(){
 Route::controller(AdminController::class)->group(function(){
 
     Route::get('/admin/roles-and-permissions/all-admin','allAdmin')->name('all.admin');
-    Route::get('/admin/roles-and-permissions/all-role/add-role','addRole')->name('add.role');
+    Route::get('/admin/roles-and-permissions/all-admin/add-admin','addAdmin')->name('add.admin');
 });
 });
 

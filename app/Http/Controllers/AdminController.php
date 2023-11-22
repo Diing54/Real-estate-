@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\Role;
+ 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -114,5 +115,11 @@ class AdminController extends Controller
     {
         $all_admin = User::where('role','admin')->get();
         return view('backend.pages.admin.all_admin',compact('all_admin'));
+    }
+
+    public function addAdmin()
+    {
+        $roles = Role::all();
+        return view('backend.pages.admin.add_admin',compact('roles'));
     }
 }

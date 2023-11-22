@@ -6,7 +6,7 @@
 
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-                    <a href="{{route('add.amenity')}}" class="btn btn-inverse-info">Add New Admin</a>
+                    <a href="{{route('add.admin')}}" class="btn btn-inverse-info">Add New Admin</a>
 					</ol>
 				</nav>
 
