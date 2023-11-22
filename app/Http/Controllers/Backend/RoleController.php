@@ -213,14 +213,13 @@ class RoleController extends Controller
             'message' => 'Role Permission Added Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.roles.permission')->with($notification);
     }
 
     public function allRolesPermission()
     {
         $roles = Role::all();
-        $permissions = Permission::all();
-        return view('backend.pages.rolesetup.all_roles_permission',compact('roles','permissions'));
+        return view('backend.pages.rolesetup.all_roles_permission',compact('roles'));
     }
 
     public function editRolePermission($id)
@@ -236,7 +235,10 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $permissions = $request->permission;
-        
+
+        // dd(request()->input('permission'));
+
+          
         if(!empty($permissions))
         {
              $role->syncPermissions($permissions);

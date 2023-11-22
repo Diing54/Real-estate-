@@ -26,7 +26,7 @@
                                     @csrf
 									<div class="form-group mb-3">
 										<label for="role_name" class="form-label">Role Name</label>
-                                        <h4>{{$role->name}}</h4>
+                                        <h3>{{$role->name}}</h3>
                                     </div>
                                     <div class="form-check mb-2">
                                             <input type="checkbox" class="form-check-input" id="checkDefaultmain">
