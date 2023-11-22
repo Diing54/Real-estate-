@@ -121,6 +121,7 @@ Route::controller(RoleController::class)->group(function(){
 
     Route::get('/admin/roles-and-permissions/all-roles-permission/edit-role-permission/{id}','editRolePermission')->name('edit.role.permission'); 
     Route::post('/admin/roles-and-permissions/all-roles-permission/update-role-permission/{id}','updateRolePermission')->name('update.role.permission');
+    Route::get('/admin/roles-and-permissions/all-roles-permission/delete-role-permission/{id}','deleteRolePermission')->name('delete.role.permission'); 
 
 
 });
