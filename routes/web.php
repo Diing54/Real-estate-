@@ -123,7 +123,13 @@ Route::controller(RoleController::class)->group(function(){
     Route::post('/admin/roles-and-permissions/all-roles-permission/update-role-permission/{id}','updateRolePermission')->name('update.role.permission');
     Route::get('/admin/roles-and-permissions/all-roles-permission/delete-role-permission/{id}','deleteRolePermission')->name('delete.role.permission'); 
 
+});
 
+    //Admin all routes
+Route::controller(AdminController::class)->group(function(){
+
+    Route::get('/admin/roles-and-permissions/all-admin','allAdmin')->name('all.admin');
+    Route::get('/admin/roles-and-permissions/all-role/add-role','addRole')->name('add.role');
 });
 });
 

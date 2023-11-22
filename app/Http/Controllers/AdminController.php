@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -106,5 +107,12 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/admin/login');
+    }
+
+
+    public function allAdmin()
+    {
+        $all_admin = User::where('role','admin')->get();
+        return view('backend.pages.admin.all_admin',compact('all_admin'));
     }
 }

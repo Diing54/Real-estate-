@@ -119,7 +119,7 @@
                         <ul class="nav sub-menu">
                             
                             <li class="nav-item">
-                            <a href="{{route('all.permissions')}}" class="nav-link">All Admins</a>
+                            <a href="{{route('all.admin')}}" class="nav-link">All Admins</a>
                             </li>
                             <li class="nav-item">
                             <a href="{{route('all.roles')}}" class="nav-link">Add Admin</a>
