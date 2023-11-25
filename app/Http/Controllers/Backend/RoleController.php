@@ -234,13 +234,14 @@ class RoleController extends Controller
     public function updateRolePermission(Request $request, $id)
     {
         $role = Role::findOrFail($id);
-        $permissions = $request->permission;
+        $permission = $request->permission;
 
         // dd(request()->input('permission'));
 
           
-        if(!empty($permissions))
+        if(!empty($permission))
         {
+            $permissions = Permission::whereIn('id', $permission)->pluck('name')->toArray();
              $role->syncPermissions($permissions);
         }
 

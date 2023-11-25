@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
  
+use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -138,8 +138,9 @@ class AdminController extends Controller
         $user->save();
 
         if($request->roles){
-            $user->assignRole($request->roles);
-        }
+            $role = Role::findById($request->roles);
+            $user->assignRole($role->name);
+            }
         $notification = array(
             'message' => 'New Admin Created Successfully',
             'alert-type' => 'success'
