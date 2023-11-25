@@ -15,7 +15,7 @@
 
 								<h6 class="card-title">Edit Admin</h6>
 
-								<form id="myForm" class="forms-sample" method="post" action="{{route('store.admin')}}">
+								<form id="myForm" class="forms-sample" method="post" action="{{route('update.admin',$user->id)}}">
                                     @csrf
                                      <div class="form-group mb-3">
 										<label for="role_name" class="form-label">Admin User Name</label>

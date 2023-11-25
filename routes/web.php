@@ -132,6 +132,8 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/roles-and-permissions/all-admin/add-admin','addAdmin')->name('add.admin');
     Route::post('/admin/roles-and-permissions/all-admin/store-admin','storeAdmin')->name('store.admin');
     Route::get('/admin/roles-and-permissions/all-admin/edit-admin/{id}','editAdmin')->name('edit.admin');
+    Route::post('/admin/roles-and-permissions/all-admin/update-admin/{id}','updateAdmin')->name('update.admin');
+
 
 });
 });
