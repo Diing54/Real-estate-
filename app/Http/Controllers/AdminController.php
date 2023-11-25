@@ -147,4 +147,11 @@ class AdminController extends Controller
         );
         return redirect()->route('all.admin')->with($notification);
     }
+
+    public function editAdmin($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = Role::all();
+        return view('backend.pages.admin.edit_admin',compact('user','roles'));
+    }
 }
