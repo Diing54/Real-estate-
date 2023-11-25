@@ -15,7 +15,7 @@
 
 								<h6 class="card-title">Add New Admin</h6>
 
-								<form id="myForm" class="forms-sample" method="post" action="{{route('store.role')}}">
+								<form id="myForm" class="forms-sample" method="post" action="{{route('store.admin')}}">
                                     @csrf
                                     <div class="form-group mb-3">
 										<label for="role_name" class="form-label">Admin User Name</label>
@@ -64,5 +64,73 @@
 </div>
 
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                username: {
+                    required : true,
+                }, 
+                name: {
+                    required : true,
+                }, 
+                email: {
+                    required : true,
+                }, 
+                phone: {
+                    required : true,
+                }, 
+                address: {
+                    required : true,
+                }, 
+                password: {
+                    required : true,
+                }, 
+                roles: {
+                    required : true,
+                }, 
+                
+            },
+            messages :{
+               username: {
+                    required : 'Please Enter User Name',
+                }, 
+                name: {
+                    required : 'Please Enter Name',
+                }, 
+                email: {
+                    required : 'Please Enter Email',
+                }, 
+                phone: {
+                    required : 'Please Enter Phone',
+                }, 
+                address: {
+                    required : 'Please Enter Address',
+                }, 
+                password: {
+                    required : 'Please Enter Password',
+                }, 
+                roles: {
+                    required : 'Please Enter Name',
+                }, 
+   
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 @endsection
