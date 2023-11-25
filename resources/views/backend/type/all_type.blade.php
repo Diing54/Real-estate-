@@ -5,9 +5,11 @@
 <div class="page-content">
 
 				<nav class="page-breadcrumb">
+        @if(Auth::user()->can('add.type'))
 					<ol class="breadcrumb">
                     <a href="{{route('add.type')}}" class="btn btn-inverse-info">Add Property Type</a>
 					</ol>
+          @endif
 				</nav>
 
 				<div class="row">
@@ -32,9 +34,13 @@
                         <td>{{$key+1}}</td>
                         <td>{{$item->type_name}}</td>
                         <td>{{$item->type_icon}}</td>
-                        <td> 
+                        <td>  
+                          @if(Auth::user()->can('edit.type'))
                             <a href="{{route('edit.type', $item->id)}}" class="btn btn-inverse-warning">Edit</a>
+                          @endif
+                          @if(Auth::user()->can('delete.type'))
                             <a href="{{route('delete.type', $item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
+                          @endif
                         </td>
                       </tr>
                       @endforeach
