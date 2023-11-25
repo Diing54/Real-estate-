@@ -173,9 +173,24 @@ class AdminController extends Controller
             $user->assignRole($role->name);
             }
         $notification = array(
-            'message' => 'Admin Updated Successfully',
+            'message' => 'New Admin Updated Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.admin')->with($notification);
+    }
+
+    public function deleteAdmin($id)
+    {
+        $user = User::findOrFail($id);
+
+        if(!is_null($user))
+        {
+            $user->delete();
+        }
+        $notification = array(
+            'message' => 'New Admin Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

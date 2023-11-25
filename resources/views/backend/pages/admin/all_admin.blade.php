@@ -46,7 +46,7 @@
                         </td>
                           <td> 
                             <a href="{{route('edit.admin', $item->id)}}" class="btn btn-inverse-warning" title="Edit"><i data-feather="edit"></i></a>
-                            <a href="{{route('delete.amenity', $item->id)}}" class="btn btn-inverse-danger" id="delete" title="Delete"><i data-feather="trash-2"></i></a>
+                            <a href="{{route('delete.admin', $item->id)}}" class="btn btn-inverse-danger" id="delete" title="Delete"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>
                       @endforeach
