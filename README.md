@@ -19,28 +19,28 @@ This is an admin dashboard designed for property management, allowing users to c
 
 ## Installation
 
-#### Clone the repository:
+### Clone the repository:
 git clone https://github.com/Michael-Njoroge/laravel_real_estate.git
 
-#### Install dependencies:
+### Install dependencies:
 cd laravel_real_estate
 composer install
 
-#### Configure the environment:
+### Configure the environment:
 Copy the .env.example file to .env and configure your database settings.
 cp .env.example .env
 
-#### Generate the application key:
+### Generate the application key:
 php artisan key:generate
 
-#### Set up the database:
+### Set up the database:
 Import the 'real_estate_app.sql' database
 
-#### Start the development server:
+### Start the development server:
 php artisan serve
 Access the dashboard at http://localhost:8000
 
-#### Acess credentials
+### Acess credentials
 admin username: mike
 admin password: password@123
  
