@@ -5,7 +5,7 @@
 <div class="page-content">
 
 				<nav class="page-breadcrumb">
-        @if(Auth::user()->can('add.state'))
+        @if(Auth::user()->can('add.type'))
 					<ol class="breadcrumb">
                     <a href="{{route('add.type')}}" class="btn btn-inverse-info">Add Property State</a>
 					</ol>
@@ -24,16 +24,16 @@
                       <tr>
                         <th>S1</th>
                         <th>State Name </th>
-                        <th>Type Icon </th>
+                        <th>Description </th>
                         <th>Action </th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($types as $key => $item)
+                        @foreach($states as $key => $item)
                       <tr>
                         <td>{{$key+1}}</td>
-                        <td>{{$item->type_name}}</td>
-                        <td>{{$item->type_icon}}</td>
+                        <td>{{$item->state_name}}</td>
+                        <td>{{$item->state_description}}</td>
                         <td>  
                           @if(Auth::user()->can('edit.type'))
                             <a href="{{route('edit.type', $item->id)}}" class="btn btn-inverse-warning">Edit</a>

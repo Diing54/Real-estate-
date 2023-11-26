@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Amenities;
+use App\Models\PropertyState;
+use App\Models\PropertyStore;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 
 class PropertyTypeController extends Controller
 {
-    /**
-     * All property type
-     */
+    
+///////////////////////////// Property type ///////////////////////////////////
+
     public function allType()
     {
         $types = PropertyType::latest()->get();
@@ -92,6 +94,15 @@ class PropertyTypeController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
+    }
+
+
+    ////////////////////////////////// Property State/////////////////////////////////////////////
+
+    public function allState()
+    {
+        $states = PropertyState::latest()->get();
+        return view('backend.state.all_state',compact('states'));
     }
 
 

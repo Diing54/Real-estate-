@@ -65,15 +65,28 @@ Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login
 
 
 Route::middleware(['auth','role:admin'])->group(function(){
-    //Property type all routes
-    Route::controller(PropertyTypeController::class)->group(function(){
 
-        Route::get('/admin/property-type/all-type','allType')->name('all.type');
-        Route::get('/admin/property-type/all-type/add-type','addType')->name('add.type');
-        Route::post('/admin/property-type/all-type/store-type','storeType')->name('store.type');
-        Route::get('/admin/property-type/all-type/edit-type/{id}','editType')->name('edit.type');
-        Route::post('/admin/property-type/all-type/update-type','updateType')->name('update.type');
-        Route::get('/admin/property-type/all-type/delete-type/{id}','deleteType')->name('delete.type');
+//Property type all routes
+Route::controller(PropertyTypeController::class)->group(function(){
+
+    Route::get('/admin/property-type/all-type','allType')->name('all.type');
+    Route::get('/admin/property-type/all-type/add-type','addType')->name('add.type');
+    Route::post('/admin/property-type/all-type/store-type','storeType')->name('store.type');
+    Route::get('/admin/property-type/all-type/edit-type/{id}','editType')->name('edit.type');
+    Route::post('/admin/property-type/all-type/update-type','updateType')->name('update.type');
+    Route::get('/admin/property-type/all-type/delete-type/{id}','deleteType')->name('delete.type');
+        
+});
+
+//Property state all routes
+Route::controller(PropertyTypeController::class)->group(function(){
+
+    Route::get('/admin/property-state/all-state','allState')->name('all.state');
+    // Route::get('/admin/property-state/all-state/add-state','addState')->name('add.state');
+    // Route::post('/admin/property-state/all-state/store-state','storeState')->name('store.state');
+    // Route::get('/admin/property-state/all-state/edit-state/{id}','editState')->name('edit.state');
+    // Route::post('/admin/property-state/all-state/update-state','updateState')->name('update.state');
+    // Route::get('/admin/property-state/all-state/delete-state/{id}','deleteState')->name('delete.state');
         
 });
 
