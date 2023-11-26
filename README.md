@@ -39,13 +39,17 @@ cp .env.example .env
 
 php artisan key:generate
 
-#### Run migrations and seed the database:
+#### Set up the database:
 
-php artisan migrate --seed
+Import the 'real_estate_app.sql' database
 
 #### Start the development server:
 
 php artisan serve
 
 Access the dashboard at http://localhost:8000
+
+#### Acess credentials
+admin username: mike
+admin password: password@123
  
