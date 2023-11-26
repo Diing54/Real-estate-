@@ -112,22 +112,28 @@ class PropertyTypeController extends Controller
 
     public function storeState(Request $request)
     {
-          $request->validate([
-            'state_name' => 'required|unique:property_states|max:200',
-            'state_description' => 'required'
+        $request->validate([
+        'state_name' => 'required|unique:property_states|max:200',
+        'state_description' => 'required'
         ]);
 
         PropertyState::insert([
-            'state_name' => $request -> state_name,
-            'state_description' => $request -> state_description
+        'state_name' => $request -> state_name,
+        'state_description' => $request -> state_description
         ]);
 
-       
-            $notification = array(
-                'message' => 'Property State Added Successfully',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('all.state')->with($notification);
+        $notification = array(
+            'message' => 'Property State Added Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.state')->with($notification);
+    }
+
+    public function editState($id)
+    {
+        $states = PropertyState::findOrFail($id);
+        
+        return view('backend.state.edit_state', compact('states'));
     }
 
 
