@@ -43,4 +43,6 @@ Access the dashboard at http://localhost:8000
 ### Acess credentials
 admin username: mike
 admin password: password@123
+
+![Alt text](<Screenshot from 2023-11-26 10-27-24.png>) ![Alt text](<Screenshot from 2023-11-26 10-27-11.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-58.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-13.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-03.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-48.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-34.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-24.png>) ![Alt text](<Screenshot from 2023-11-26 10-24-54.png>)
  
