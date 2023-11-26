@@ -37,7 +37,7 @@ require __DIR__.'/auth.php';
 
 //Admin middleware
 
-Route::middleware(['auth','role:admin'])->group(function(){
+Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
@@ -53,7 +53,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 //Agent middleware
 
-Route::middleware(['auth','role:agent'])->group(function(){
+Route::middleware(['auth','roles:agent'])->group(function(){
 
 Route::get('/agent/dashboard', [AgentController::class, 'agent'])->name('agent.dashboard');
 
@@ -64,13 +64,13 @@ Route::get('/agent/dashboard', [AgentController::class, 'agent'])->name('agent.d
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 
 
-Route::middleware(['auth','role:admin'])->group(function(){
+Route::middleware(['auth','roles:admin'])->group(function(){
 
 //Property type all routes
 Route::controller(PropertyTypeController::class)->group(function(){
 
-    Route::get('/admin/property-type/all-type','allType')->name('all.type');
-    Route::get('/admin/property-type/all-type/add-type','addType')->name('add.type');
+    Route::get('/admin/property-type/all-type','allType')->name('all.type')->middleware('permission:all.type');
+    Route::get('/admin/property-type/all-type/add-type','addType')->name('add.type')->middleware('permission:add.type');
     Route::post('/admin/property-type/all-type/store-type','storeType')->name('store.type');
     Route::get('/admin/property-type/all-type/edit-type/{id}','editType')->name('edit.type');
     Route::post('/admin/property-type/all-type/update-type','updateType')->name('update.type');
