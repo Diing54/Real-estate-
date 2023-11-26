@@ -1,4 +1,4 @@
-# Admin Dashboard for Property Management
+# Admin Dashboard
 ## Overview
 This is an admin dashboard designed for property management, allowing users to create and manage property types, amenities, property states, roles, and permissions. The application is built using Laravel and utilizes the Spatie Roles and Permissions package for handling user roles and permissions.
 ## Features
@@ -19,81 +19,33 @@ This is an admin dashboard designed for property management, allowing users to c
 
 ## Installation
 
-Clone the repository:
+#### Clone the repository:
  
-git clone https://github.com/your-username/property-management-dashboard.git
+git clone https://github.com/Michael-Njoroge/laravel_real_estate.git
 
-Install dependencies:
+#### Install dependencies:
  
-cd property-management-dashboard
+cd laravel_real_estate
+
 composer install
 
-Configure the environment:
+#### Configure the environment:
 
-    Copy the .env.example file to .env and configure your database settings.
-
-bash
+Copy the .env.example file to .env and configure your database settings.
 
 cp .env.example .env
 
-    Generate the application key:
-
-bash
+#### Generate the application key:
 
 php artisan key:generate
 
-Run migrations and seed the database:
-
-bash
+#### Run migrations and seed the database:
 
 php artisan migrate --seed
 
-Start the development server:
-
-bash
+#### Start the development server:
 
 php artisan serve
 
-Access the dashboard at http://localhost:8000.Installation
-
-    Clone the repository:
-
-    bash
-
-git clone https://github.com/your-username/property-management-dashboard.git
-
-Install dependencies:
-
-bash
-
-cd property-management-dashboard
-composer install
-npm install
-
-Configure the environment:
-
-    Copy the .env.example file to .env and configure your database settings.
-
-bash
-
-cp .env.example .env
-
-    Generate the application key:
-
-bash
-
-php artisan key:generate
-
-Run migrations and seed the database:
-
-bash
-
-php artisan migrate --seed
-
-Start the development server:
-
-bash
-
-php artisan serve
-
-Access the dashboard at http://localhost:8000.
+Access the dashboard at http://localhost:8000
+ 
