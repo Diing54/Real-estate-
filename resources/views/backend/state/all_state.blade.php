@@ -35,7 +35,7 @@
                         <td>{{$item->state_name}}</td>
                         <td>{{$item->state_description}}</td>
                         <td>  
-                          @if(Auth::user()->can('edit.type'))
+                          @if(Auth::user()->can('edit.state'))
                             <a href="{{route('edit.state', $item->id)}}" class="btn btn-inverse-warning">Edit</a>
                           @endif
                           @if(Auth::user()->can('delete.type'))

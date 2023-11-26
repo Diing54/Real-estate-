@@ -85,7 +85,7 @@ Route::controller(PropertyTypeController::class)->group(function(){
     Route::get('/admin/property-state/all-state/add-state','addState')->name('add.state');
     Route::post('/admin/property-state/all-state/store-state','storeState')->name('store.state');
     Route::get('/admin/property-state/all-state/edit-state/{id}','editState')->name('edit.state');
-    // Route::post('/admin/property-state/all-state/update-state','updateState')->name('update.state');
+    Route::post('/admin/property-state/all-state/update-state','updateState')->name('update.state');
     // Route::get('/admin/property-state/all-state/delete-state/{id}','deleteState')->name('delete.state');
         
 });

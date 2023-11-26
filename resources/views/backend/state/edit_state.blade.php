@@ -15,7 +15,7 @@
 
 								<h6 class="card-title">Edit Property State</h6>
 
-								<form class="forms-sample" method="post" action="{{route('update.type')}}">
+								<form class="forms-sample" method="post" action="{{route('update.state')}}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$states->id}}">
 

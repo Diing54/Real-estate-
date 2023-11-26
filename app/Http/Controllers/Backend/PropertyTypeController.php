@@ -136,6 +136,24 @@ class PropertyTypeController extends Controller
         return view('backend.state.edit_state', compact('states'));
     }
 
+    public function updateState(Request $request)
+    {
+
+        $sid = $request -> id;
+        
+        PropertyState::findOrFail($sid)->update([
+            'state_name' => $request -> state_name,
+            'state_description' => $request -> state_description
+        ]);
+
+       
+            $notification = array(
+                'message' => 'Property State Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.state')->with($notification);
+    }
+
 
     //////////////////////////////////Amenities//////////////////////////////////////////////////
 
