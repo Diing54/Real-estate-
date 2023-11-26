@@ -20,7 +20,6 @@ This is an admin dashboard designed for property management, allowing users to c
 ## Installation
 
 #### Clone the repository:
- 
 git clone https://github.com/Michael-Njoroge/laravel_real_estate.git
 
 #### Install dependencies:
@@ -43,6 +42,5 @@ Access the dashboard at http://localhost:8000
 
 #### Acess credentials
 admin username: mike
-
 admin password: password@123
  
