@@ -15,7 +15,7 @@
 
 								<h6 class="card-title">Add New Property State</h6>
 
-								<form class="forms-sample" method="post" action="{{route('store.type')}}">
+								<form class="forms-sample" method="post" action="{{route('store.state')}}">
                                     @csrf
 
 									<div class="mb-3">

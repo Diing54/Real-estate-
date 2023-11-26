@@ -5,7 +5,7 @@
 <div class="page-content">
 
 				<nav class="page-breadcrumb">
-        @if(Auth::user()->can('add.type'))
+        @if(Auth::user()->can('add.state'))
 					<ol class="breadcrumb">
                     <a href="{{route('add.state')}}" class="btn btn-inverse-info">Add Property State</a>
 					</ol>
