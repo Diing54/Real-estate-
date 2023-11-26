@@ -154,6 +154,17 @@ class PropertyTypeController extends Controller
             return redirect()->route('all.state')->with($notification);
     }
 
+    public function deleteState($id)
+    {
+        PropertyState::findOrFail($id) -> delete();
+
+        $notification = array(
+            'message' => 'Property State Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
 
     //////////////////////////////////Amenities//////////////////////////////////////////////////
 

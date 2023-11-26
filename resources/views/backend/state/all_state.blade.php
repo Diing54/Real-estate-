@@ -38,8 +38,8 @@
                           @if(Auth::user()->can('edit.state'))
                             <a href="{{route('edit.state', $item->id)}}" class="btn btn-inverse-warning">Edit</a>
                           @endif
-                          @if(Auth::user()->can('delete.type'))
-                            <a href="{{route('delete.type', $item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
+                          @if(Auth::user()->can('delete.state'))
+                            <a href="{{route('delete.state', $item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
                           @endif
                         </td>
                       </tr>
