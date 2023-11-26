@@ -24,10 +24,12 @@ git clone https://github.com/Michael-Njoroge/laravel_real_estate.git
 
 ### Install dependencies:
 cd laravel_real_estate
+
 composer install
 
 ### Configure the environment:
 Copy the .env.example file to .env and configure your database settings.
+
 cp .env.example .env
 
 ### Generate the application key:
@@ -38,11 +40,13 @@ Import the 'real_estate_app.sql' database
 
 ### Start the development server:
 php artisan serve
+
 Access the dashboard at http://localhost:8000
 
 ### Acess credentials
-admin username: mike
-admin password: password@123
+admin_username: mike
+
+admin_password: password@123
 
 ![Alt text](<Screenshot from 2023-11-26 10-27-24.png>) ![Alt text](<Screenshot from 2023-11-26 10-27-11.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-58.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-13.png>) ![Alt text](<Screenshot from 2023-11-26 10-26-03.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-48.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-34.png>) ![Alt text](<Screenshot from 2023-11-26 10-25-24.png>) ![Alt text](<Screenshot from 2023-11-26 10-24-54.png>)
  
