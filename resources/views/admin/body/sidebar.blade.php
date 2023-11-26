@@ -58,9 +58,9 @@
                             <a href="{{route('all.state')}}" class="nav-link">All State</a>
                             </li>
                             @endif
-                            @if(Auth::user()->can('add.type'))
+                            @if(Auth::user()->can('add.state'))
                             <li class="nav-item">
-                            <a href="{{route('add.type')}}" class="nav-link">Add State</a>
+                            <a href="{{route('add.state')}}" class="nav-link">Add State</a>
                             </li>
                             @endif
                         </ul>

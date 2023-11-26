@@ -105,6 +105,11 @@ class PropertyTypeController extends Controller
         return view('backend.state.all_state',compact('states'));
     }
 
+    public function addState()
+    {
+        return view('backend.state.add_state');
+    }
+
 
     //////////////////////////////////Amenities//////////////////////////////////////////////////
 
