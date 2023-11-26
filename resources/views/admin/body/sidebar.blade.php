@@ -23,7 +23,7 @@
                     @if(Auth::user()->can('type.menu'))
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-                        <i class="link-icon" data-feather="mail"></i>
+                        <i class="link-icon" data-feather="home"></i>
                         <span class="link-title">Property Type</span>
                         <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -47,7 +47,7 @@
                     @if(Auth::user()->can('state.menu'))
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#states" role="button" aria-expanded="false" aria-controls="states">
-                        <i class="link-icon" data-feather="mail"></i>
+                        <i class="link-icon" data-feather="check-circle"></i>
                         <span class="link-title">Property State</span>
                         <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -71,7 +71,7 @@
                     @if(Auth::user()->can('amenity.menu'))
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#amenities" role="button" aria-expanded="false" aria-controls="emails">
-                        <i class="link-icon" data-feather="mail"></i>
+                        <i class="link-icon" data-feather="airplay"></i>
                         <span class="link-title">Amenity</span>
                         <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -91,14 +91,14 @@
                         </div>
                     </li>
                     @endif
-  
+<!--   
                     <li class="nav-item">
                         <a href="pages/apps/calendar.html" class="nav-link">
                         <i class="link-icon" data-feather="calendar"></i>
                         <span class="link-title">Calendar</span>
                         </a>
-                    </li>
-                    <li class="nav-item nav-category">Components</li>
+                    </li> -->
+                    <!-- <li class="nav-item nav-category">Components</li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
                         <i class="link-icon" data-feather="feather"></i>
@@ -118,11 +118,11 @@
                             </li>
                         </ul>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item nav-category">Roles and Permissions</li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false" aria-controls="advancedUI">
-                        <i class="link-icon" data-feather="anchor"></i>
+                        <i class="link-icon" data-feather="shield"></i>
                         <span class="link-title">Roles & Permissions</span>
                         <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -148,7 +148,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#admin" role="button" aria-expanded="false" aria-controls="admin">
-                        <i class="link-icon" data-feather="anchor"></i>
+                        <i class="link-icon" data-feather="edit"></i>
                         <span class="link-title">Manage Admin User</span>
                         <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -166,13 +166,13 @@
                     </li>
                      
              
-                    <li class="nav-item nav-category">Docs</li>
+                    <!-- <li class="nav-item nav-category">Docs</li>
                     <li class="nav-item">
                         <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
                         <i class="link-icon" data-feather="hash"></i>
                         <span class="link-title">Documentation</span>
                         </a>
-                    </li>
+                    </li> -->
                     </ul>
                 </div>
         </nav>
